@@ -1,0 +1,251 @@
+@font-face {
+    font-family: Avenir;
+    src: url(../fonts/Avenir.ttc);
+}
+@font-face {
+    font-family: ITC Avant Garde Gothic Pro;
+    src: url(../fonts/ITCAvantGardePro-Md.otf);
+}
+:root {
+    --productColor1: #c4c4c4;
+    --productColor2: #cc9999;
+    --productColor3: #CB99CC;
+    --productColor4: #A6CC99;
+
+    --animationDuration: 3s;
+
+    --productGap: 30px;
+}
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: Avenir;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+main {
+    display: flex;
+    flex-direction: row;
+}
+main section {
+    width: 50%;
+    height: 100vh;
+}
+main section.image-section {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+main section.content-section {
+    width: 50%;
+    height: 100vh;
+    padding-top: 100px;
+    padding-left: 120px;
+}
+main section .main-img {
+    min-height: 100%;
+    animation: fadeIn var(--animationDuration);
+}
+main section .section-container {
+    padding-right: 120px;
+    padding-bottom: 100px;
+}
+main section .section-container .section-title{
+    font-family: ITC Avant Garde Gothic Pro;
+    font-weight: 700;
+    font-size: 31.25px;
+    line-height: 130%;
+    margin-bottom: 20px;
+    animation: slideInTop var(--animationDuration);
+}
+main section .section-container .section-desc{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: #666666;
+    margin-bottom: 20px;
+    animation: slideInTop var(--animationDuration);
+}
+main section .section-container .shop-router{
+    animation: slideInRight var(--animationDuration);
+}
+main section .section-container .shop-router .all-products{
+    font-weight: 900;
+    font-size: 12.8px;
+    line-height: 17px;
+    color: #000000;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+    transition: letter-spacing linear .2s;
+}
+main section .section-container .shop-router .all-products:hover {
+    letter-spacing: 1px;
+}
+main section .product-slider{
+    position: relative;
+    animation: slideInBottom var(--animationDuration);
+}
+main section .product-slider .products{
+    display: flex;
+    flex-direction: row;
+    gap: var(--productGap);
+    padding-right: var(--productGap);
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+main section .product-slider .products::-webkit-scrollbar {
+    display: none;
+}
+main section .product-slider .direction-button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 2;
+}
+main section .product-slider .direction-button.left{
+    left: 50px;
+}
+main section .product-slider .direction-button.right{
+    right: 50px;
+}
+main section .product-slider .product-card{
+    color: #000000;
+    box-shadow: none;
+    transition: box-shadow linear .1s;
+    position: relative;
+}
+main section .product-slider .product-card:hover{
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+}
+main section .product-slider .product-card:last-child{
+}
+main section .product-slider .product-card .product-image{
+    width: 230px;
+    height: 310px;
+}
+main section .product-slider .product-card .product-name{
+    font-weight: 400;
+    font-size: 12.8px;
+    line-height: 160%;
+}
+main section .product-slider .product-card .product-detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+main section .product-slider .product-card .product-detail .product-price{
+    font-weight: 500;
+    font-size: 12.8px;
+    line-height: 160%;
+}
+main section .product-slider .product-card .product-detail .product-colors{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+main section .product-slider .product-card .product-detail .product-colors .color{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+main section .product-slider .product-card .product-detail .product-colors .color.active{
+    padding: 3px;
+    border: 1px solid #000000;
+}
+main section .product-slider .product-card .product-detail .product-colors .color:nth-child(1){
+    background-color: var(--productColor1);
+}
+main section .product-slider .product-card .product-detail .product-colors .color:nth-child(2){
+    background-color: var(--productColor2);
+}
+main section .product-slider .product-card .product-detail .product-colors .color:nth-child(3){
+    background-color: var(--productColor3);
+}
+main section .product-slider .product-card .product-detail .product-colors .color:nth-child(4){
+    background-color: var(--productColor4);
+}
+
+/* animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes slideInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide Hover Effect */
+.slide-hover:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+.slide-hover:hover:after {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
