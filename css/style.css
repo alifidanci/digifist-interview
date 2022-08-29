@@ -140,6 +140,7 @@ main section .product-slider .product-card .product-name{
     font-weight: 400;
     font-size: 12.8px;
     line-height: 160%;
+    color: #000000;
 }
 main section .product-slider .product-card .product-detail{
     display: flex;
@@ -161,6 +162,7 @@ main section .product-slider .product-card .product-detail .product-colors .colo
     width: 10px;
     height: 10px;
     border-radius: 50%;
+    cursor: pointer;
 }
 main section .product-slider .product-card .product-detail .product-colors .color.active{
     padding: 3px;
@@ -241,6 +243,7 @@ main section .product-slider .product-card .product-detail .product-colors .colo
     -webkit-transition: none;
     -moz-transition: none;
     transition: none;
+    pointer-events: none;
 }
 .slide-hover:hover:after {
     width: 100%;
@@ -248,4 +251,5 @@ main section .product-slider .product-card .product-detail .product-colors .colo
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
+    pointer-events: none;
 }
